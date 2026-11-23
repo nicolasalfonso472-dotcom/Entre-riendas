@@ -1,0 +1,17 @@
+ENTRE RIENDAS — PAQUETE CON PANEL DE ADMINISTRACIÓN
+
+IMPORTANTE: este paquete está preparado, pero el panel no quedará operativo hasta completar la conexión GitHub-Netlify y crear una GitHub OAuth App.
+
+1) Subir TODO el contenido de esta carpeta al repositorio GitHub nicolasalfonso472-dotcom/Entre-riendas (no subir la carpeta contenedora como un nivel extra).
+2) En Netlify, conectar el proyecto existente al repositorio GitHub anterior y configurar la rama main. Publicar desde el repositorio.
+3) En GitHub > Settings > Developer settings > OAuth Apps > New OAuth App, registrar:
+   Homepage URL: https://stunning-mousse-8145ec.netlify.app
+   Authorization callback URL: https://stunning-mousse-8145ec.netlify.app/.netlify/functions/auth
+4) Copiar el Client ID y generar un Client Secret. En Netlify > Project configuration > Environment variables, crear:
+   GITHUB_OAUTH_CLIENT_ID = (Client ID de la OAuth App)
+   GITHUB_OAUTH_CLIENT_SECRET = (Client Secret de la OAuth App)
+5) Volver a desplegar el sitio. El panel estará en /admin/.
+
+El panel guarda las noticias en content/posts.json dentro del repositorio. La web las muestra en la sección Últimas noticias. Las imágenes se guardan en images/uploads.
+
+SEGURIDAD: nunca compartas el Client Secret ni contraseñas en el chat. Configuralos directamente en GitHub/Netlify. El repositorio puede ser público para el código; las credenciales deben permanecer como variables privadas de Netlify.

@@ -1,0 +1,6 @@
+ENTRE RIENDAS - SITIO WEB
+
+Esta carpeta contiene la página web y sus fotografías.
+Para publicarla en Netlify, arrastrá la carpeta completa entre_riendas (la que contiene index.html y la carpeta images) al área de carga de Deploy manually.
+
+Las fotografías incluidas son imágenes ilustrativas generadas para el diseño; no representan coberturas documentales de eventos reales.

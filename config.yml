@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: nicolasalfonso472-dotcom/Entre-riendas
+  branch: main
+  base_url: https://stunning-mousse-8145ec.netlify.app
+  auth_endpoint: /.netlify/functions/auth
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+locale: "es"
+
+collections:
+  - name: "noticias"
+    label: "Noticias"
+    files:
+      - name: "publicaciones"
+        label: "Publicaciones de Entre Riendas"
+        file: "content/posts.json"
+        format: "json"
+        fields:
+          - label: "Publicaciones"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            fields:
+              - { label: "Título", name: "title", widget: "string" }
+              - { label: "Bajada", name: "excerpt", widget: "text" }
+              - { label: "Fecha", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - label: "Sección"
+                name: "category"
+                widget: "select"
+                options: ["Equitación", "Polo", "Salto internacional", "Triple Corona", "Internacional", "Entrevistas"]
+              - { label: "Fotografía principal", name: "image", widget: "image", required: false }
+              - { label: "Epígrafe", name: "caption", widget: "string", required: false }
+              - { label: "Cuerpo de la noticia", name: "body", widget: "markdown" }
